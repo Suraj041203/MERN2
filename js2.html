@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alphabetical Order</title>
+</head>
+
+<body>
+
+  <h1>Alphabetical Order</h1>
+  <label for="input-string">Input:</label>
+
+  <input type="text" id="input-string" placeholder="Enter a string">
+  <button type="button" id="sort-button">Sort</button><br>
+  <label for="output-string">Output:</label>
+  <span id="output-string"></span>
+
+  <script>
+    // Get the input and output elements.
+    const inputStringElement = document.getElementById('input-string');
+    const outputStringElement = document.getElementById('output-string');
+
+    // Add an event listener to the sort button.
+    document.getElementById('sort-button').addEventListener('click', function() {
+      // Get the input string.
+      const inputString = inputStringElement.value;
+
+      // Sort the input string in alphabetical order.
+      const sortedString = alphabeticalOrder(inputString);
+
+      // Display the sorted string.
+      outputStringElement.textContent = sortedString;
+    });
+
+    // A function to sort a string in alphabetical order.
+    function alphabeticalOrder(string) {
+      // Split the string into an array of characters.
+      const characters = string.split('');
+
+      // Sort the array of characters in alphabetical order.
+      characters.sort();
+
+      // Join the array of characters back into a string.
+      return characters.join('');
+    }
+  </script>
+
+</body>
+
+</html>
